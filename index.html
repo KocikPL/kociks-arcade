@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kocik's arcade</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%95%B9%EF%B8%8F</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1 class="logo">kocik's arcade</h1>
+    <div class="hud">
+      <div class="points-pill" title="">
+        <span class="coin">PTS</span>
+        <span id="points-num">...</span>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn" id="btn-en" type="button">EN</button>
+        <button class="lang-btn" id="btn-pl" type="button">PL</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="app" aria-live="polite"></main>
+
+<div id="toast-box" aria-live="assertive"></div>
+
+<script src="i18n.js"></script>
+<script src="game.js"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="mp.js"></script>
+</body>
+</html>
