@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kocik's arcade - 12 games i made (no ads)</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%95%B9%EF%B8%8F</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1 class="logo">kocik's arcade<span class="beta-tag">v0.3 beta</span></h1>
+    <div class="hud">
+      <div class="points-pill" title="">
+        <span class="coin">PTS</span>
+        <span id="points-num">...</span>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn" id="btn-en" type="button">EN</button>
+        <button class="lang-btn" id="btn-pl" type="button">PL</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&#9733; WELCOME TO MY ARCADE &#9733; MULTIPLAYER IS LIVE: MAKE A ROOM, SHARE THE CODE, BEAT YOUR FRIENDS &#9733; NO ADS &#9733; NO TRACKING &#9733; NEW GAMES WHEN I FEEL LIKE IT &nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>&#9733; WELCOME TO MY ARCADE &#9733; MULTIPLAYER IS LIVE: MAKE A ROOM, SHARE THE CODE, BEAT YOUR FRIENDS &#9733; NO ADS &#9733; NO TRACKING &#9733; NEW GAMES WHEN I FEEL LIKE IT &nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+<div class="construction"><span>&#128679; under construction (permanently) &#128679;</span></div>
+
+<main id="app" aria-live="polite"></main>
+
+<section class="changelog">
+  <h2 class="cl-title">// changelog (sort of)</h2>
+  <ul class="cl-list">
+    <li><b>v0.3</b> - multiplayer rooms. snake got deleted, sorry snake</li>
+    <li><b>v0.2</b> - point shop + roulette. the points are fake, the gambling is real</li>
+    <li><b>v0.1</b> - started it one night, 11 games, no sleep</li>
+  </ul>
+</section>
+
+<footer class="footer">
+  <div class="counter-line">you are visit no. <span class="counter" id="visit-count">?????</span> <span class="counter-note">(on this browser, heh)</span></div>
+  <pre class="footer-art">
+      .---------------------------.
+      |  kocik wuz here, 2026 :P  |
+      '---------------------------'
+  </pre>
+  <p class="footer-blurb">
+    made by kocik &#183; html + css + a suspicious amount of free time<br>
+    bugs? weird ideas? tell me on discord<br>
+    <span class="footer-badges">
+      <span class="badge">made with notepad</span>
+      <span class="badge">no cookies, just games</span>
+      <span class="badge">100% hand-typed</span>
+    </span>
+  </p>
+  <div class="note-wobble">P.S. if multiplayer randomly kicks you, that's a me-problem, not a you-problem :P</div>
+  <p class="footer-blurb"><span class="footer-tiny">best viewed with the lights off and the volume up</span></p>
+</footer>
+<script>
+(function () {
+  try {
+    var n = (parseInt(localStorage.getItem("kac_visits"), 10) || 0) + 1;
+    localStorage.setItem("kac_visits", String(n));
+    var el = document.getElementById("visit-count");
+    if (el) el.textContent = ("00000" + n).slice(-5);
+  } catch (e) {}
+})();
+</script>
+
+<div id="toast-box" aria-live="assertive"></div>
+
+<script src="i18n.js"></script>
+<script src="game.js"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="mp.js"></script>
+</body>
+</html>
